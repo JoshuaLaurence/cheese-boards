@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
+    "coverage" : "jest --coverage",
     "seed": "cd db && node seed.js"
   },
   "repository": {
