@@ -27,7 +27,7 @@ async function seed() {
     await Board.bulkCreate([
         {
             type: "The Blue Cheese Board",
-            description: "Served on a thick slap of veneered walnut, this pungent board will have your taste buds sizzling. Gorgonzola, Blue Stilton, and a couple more fan favourites",
+            description: "Served on a thick slap of veneered walnut, this pungent board will have your taste buds sizzling. Featuring Gorgonzola and Blue Stilton",
             rating: 8.4
         },
         {
@@ -52,9 +52,64 @@ async function seed() {
         },
         {
             type: "The Fresh Cheese Board",
-            description: "An unusual and yet delicious choice. Mozeralla, Feta, Brie and swiss cheese all served on a natural slice of slate",
+            description: "An unusual and yet delicious choice. Mozerella, Feta, Brie and swiss cheese all served on a natural slice of slate",
             rating: 7.3
         },
+    ])
+
+    await Cheese.bulkCreate([
+        {
+            title: "Gorgonzola",
+            description: "A Blue Classic"
+        },
+        {
+            title: "Blue Stilton",
+            description: "A British Blue Classic"
+        },
+        {
+            title: "American Cheese",
+            description: "A Staple of American Culture"
+        },
+        {
+            title: "Double Gloucester",
+            description: "A British Born Beauty"
+        },
+        {
+            title: "Wensleydale",
+            description: "If It's Good Enough for Wallace & Gromit"
+        },
+        {
+            title: "Brie",
+            description: "A Personal Favourite"
+        },
+        {
+            title: "Camembert",
+            description: "A French Fancy"
+        },
+        {
+            title: "Feta",
+            description: "A Greek Goodie"
+        },
+        {
+            title: "Swiss",
+            description: "A Sparkle of Swiss Sweetness"
+        },
+        {
+            title: "Ricotta",
+            description: "A Cheese"
+        },
+        {
+            title: "Gouda",
+            description: "Another Cheese"
+        },
+        {
+            title: "Monterey Jack",
+            description: "I Lost Creativity"
+        },
+        {
+            title: "Mozerella",
+            description: "A Soft Staple"
+        }
     ])
 }
 seed();
