@@ -1,9 +1,7 @@
 const {Sequelize, DataTypes, Model} = require("sequelize")
 const db = require("../db/db")
 
-class User extends Model {}
-
-User.init({
+const User = db.define("User", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -11,7 +9,10 @@ User.init({
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: ["^[a-z]+$",'i'],
+        }
     },
     email: {
         type: DataTypes.STRING,

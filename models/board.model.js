@@ -1,9 +1,7 @@
 const {Sequelize, DataTypes, Model} = require("sequelize")
 const db = require("../db/db")
 
-class Board extends Model {}
-
-Board.init({
+const Board = db.define("Board", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -11,15 +9,24 @@ Board.init({
     },
     type: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: ["^[a-z]+$",'i'],
+        }
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: ["^[a-z]+$",'i'],
+        }
     },
     rating: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            isNumeric: true
+        }
     }
 }, {
     sequelize: db

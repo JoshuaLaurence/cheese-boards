@@ -1,9 +1,7 @@
 const {Sequelize, DataTypes, Model} = require("sequelize")
 const db = require("../db/db")
 
-class Cheese extends Model {}
-
-Cheese.init({
+const Cheese = db.define("Cheese", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -11,11 +9,17 @@ Cheese.init({
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: ["^[a-z]+$",'i'],
+        }
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: ["^[a-z]+$",'i'],
+        }
     }
 }, {
     sequelize: db
