@@ -2,9 +2,9 @@ const {Board, Cheese, User} = require("../models")
 const db = require("../db/db")
 
 describe("Cheese Board Tests", () => {
-    beforeAll(async () => {
-        await db.sync({force: true})
-    })
+    // beforeAll(async () => {
+    //     await db.sync({force: true})
+    // })
 
     test("Can create Board with type, description and number rating", async () => {
         const testBoard = await Board.build({type: "The French Board", description: "An unbelievable combination of seven different traditional French cheeses displayed on a platter crafted from maple wood", rating: 6.4})

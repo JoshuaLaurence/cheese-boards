@@ -2,9 +2,9 @@ const {Board, Cheese, User} = require("../models")
 const db = require("../db/db")
 
 describe("Individual Cheese Tests", () => {
-    beforeAll(async () => {
-        await db.sync({force: true})
-    })
+    // beforeAll(async () => {
+    //     await db.sync({force: true})
+    // })
 
     test("Can create Cheese with title and description", async () => {
         const testCheese = await Cheese.build({title: "Doux de montage", description: "Soft and yet flavoursome"})
