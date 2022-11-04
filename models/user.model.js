@@ -11,7 +11,7 @@ const User = db.define("User", {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            is: ["^[a-z]+$",'i'],
+            is: ["[\w\s]+",'i'], //Validates to see whether the input is a string
         }
     },
     email: {

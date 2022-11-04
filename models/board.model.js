@@ -11,14 +11,14 @@ const Board = db.define("Board", {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            is: ["^[a-z]+$",'i'],
+            is: ["[\w\s]+",'i'],
         }
     },
     description: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            is: ["^[a-z]+$",'i'],
+            is: ["[\w\s]+",'i'],
         }
     },
     rating: {
